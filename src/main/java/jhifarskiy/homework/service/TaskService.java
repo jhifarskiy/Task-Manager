@@ -81,6 +81,7 @@ public class TaskService {
 
     @Transactional
     public Task statusToIn_progress(Long id) {
+        log.info("Checking...");
         TaskEntity taskEntity = repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Can't update status: " +
                         "task by ID: " + id + " not found"));
